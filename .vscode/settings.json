@@ -8,5 +8,6 @@
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.nosetestsEnabled": false,
-    "python.testing.unittestEnabled": true
+    "python.testing.unittestEnabled": true,
+    "python.pythonPath": "G:\\Users\\Ayush\\Anaconda3\\envs\\IBM_Watson\\python.exe"
 }
