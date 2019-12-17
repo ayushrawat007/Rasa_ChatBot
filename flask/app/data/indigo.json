@@ -1,0 +1,14 @@
+{
+	"DELGER-INDIGO777": {
+		"departure": "Delhi",
+		"destination": "Germany",
+		"time": "6pm",
+		"charge": "167000"
+	},
+	"GERDEL-INDIGO999": {
+		"departure": "Germany",
+		"destination": "Delhi",
+		"time": "8am",
+		"charge": "1000"
+	}
+}

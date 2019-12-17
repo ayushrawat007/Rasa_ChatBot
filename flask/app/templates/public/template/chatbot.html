@@ -1,0 +1,85 @@
+{% extends "public/template/public_template.html" %}
+
+{% block main %}
+<div class="container">
+    <div class="msg-header">
+        <div class="msg-header-img">
+            <img class="head-img" src="{{ url_for('static',filename='img/chatbot.png') }}">
+        </div>
+        <div class="active">
+            <h4>SabPaisa Bot</h4>
+            <h6>Online</h6>
+        </div>
+        <div class="header-icons">
+
+            <i class="fa fa-info-circle"></i>
+            <!-- <i class="fa fa-microphone" ></i>
+                    <i class="fa fa-paper-plane" ></i> -->
+
+        </div>
+    </div>
+
+    <div class="chat-page">
+        <div class="msg-inbox">
+
+
+            <div class="msg-page" id="chat_page">
+
+                <div class="recieved-chats">
+                    <div class="recieved-chats-img">
+                        <i class="fa fa-slideshare bot-img"></i>
+                        <!-- <img class="bot-img" src="{{ url_for('static',filename='img/chatbot.png') }}" > -->
+                    </div>
+                    <div class="recieved-msg">
+                        <div class="recieved-msg-inbox">
+                            <p>Hii!This is Mansha Bot.How are you doing today?</p>
+                            <span class="recieved-time">11:01 PM | October 11</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="outgoing-chats">
+                            <div class="outgoing-msg">
+                                <div class="outgoing-msg-inbox">
+                                <p></p>     
+                                <span class="outgoing-time">11:03 PM | October 11</span>
+                                </div>
+                            </div>
+                            
+                            <div class="outgoing-chats-img">
+                                    <i class="fa fa-user user-img"></i>
+                                    <img class="user-img" src="{{ url_for('static',filename='img/chatbot.png') }}" >
+                            </div>
+                    </div> -->
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="msg-bottom">
+        <!-- <div class="bottom-icons">
+                   
+                </div> -->
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter any Query" id="query_text">
+
+
+            <div class="input-group-text">
+                <!-- <i class="fa fa-microphone" ></i> -->
+
+                <i class="fa fa-paper-plane" onclick="chatBot()"></i>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+{% endblock %}

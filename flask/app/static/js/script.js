@@ -40,12 +40,13 @@ function chatBot(){
             }
             response.json().then(function(data){
                 intent=data["intent"]
+                what_to_ask=data["what_to_ask"]
                 var bot_ele='<div class="recieved-chats">'+
                     '<div class="recieved-chats-img">'+
                             '<i class="fa fa-slideshare bot-img" ></i>'+     
                     '</div><div class="recieved-msg">'+
                         '<div class="recieved-msg-inbox">'+
-                        '<p> Your intent is '+intent+'</p>'+
+                        '<p> '+what_to_ask+'</p>'+
                         '<span class="recieved-time">11:01 PM | October 11</span>'+
                         '</div></div></div>'
                 $('#chat_page').append(bot_ele)
@@ -55,5 +56,11 @@ function chatBot(){
             )
 
         })
+
+}
+
+function query_click(){
+
+    console.log("clicked")
 
 }
