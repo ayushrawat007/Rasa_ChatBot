@@ -1,1 +1,11 @@
-{"flight_booking": {"indigo": [{"query": "from delhi to goa", "date": "2019-12-17"}], "airasia": []}}
+{
+    "flight_booking": {
+        "indigo": [
+            {
+                "query": "from delhi to dubai",
+                "date": "2019-12-18"
+            }
+        ],
+        "airasia": []
+    }
+}
