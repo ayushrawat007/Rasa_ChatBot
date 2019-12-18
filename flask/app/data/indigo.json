@@ -1,14 +1,1 @@
-{
-	"DELGER-INDIGO777": {
-		"departure": "Delhi",
-		"destination": "Germany",
-		"time": "6pm",
-		"charge": "167000"
-	},
-	"GERDEL-INDIGO999": {
-		"departure": "Germany",
-		"destination": "Delhi",
-		"time": "8am",
-		"charge": "1000"
-	}
-}
+{"DELGER-INDIGO777": {"departure": "Delhi", "destination": "Germany", "time": "6pm", "charge": "167000"}, "GERDEL-INDIGO999": {"departure": "Germany", "destination": "Delhi", "time": "8am", "charge": "1000"}, "DELDUB-23232": {"departure": "Delhi", "destination": "Dubai", "time": "4pm", "charge": "32333"}, "DELLON-33232": {"departure": "Delhi", "destination": "London", "time": "7pm", "charge": "223322"}}

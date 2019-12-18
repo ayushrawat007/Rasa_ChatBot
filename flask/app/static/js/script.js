@@ -59,8 +59,42 @@ function chatBot(){
 
 }
 
-function query_click(){
+function query_click(id){
 
-    console.log("clicked")
+    $("#formGroupExampleInput").val("");
+
+    $("#airline_hidden").val("");
+    $("#intent_hidden").val("");
+
+    if(window.value!=undefined && window.value!=id){
+
+        var no_highlight=window.value
+        $("#"+no_highlight).css('background-color','#fff')
+        window.value=id
+    }
+
+   
+    var query=$("#"+ id).text();
+    var airline=$("#airline"+ id).text();
+    var intent=$("#intent"+ id).text();
+    console.log(airline)
+    console.log(intent)
+
+    window.value=id
+
+
+
+    $("#"+id).css('background-color','yellow')
+
+    
+    $("#"+id).css('background-color','yellow')
+    
+
+
+    $("#formGroupExampleInput").val(query);
+
+    $("#airline_hidden").val(airline);
+    $("#intent_hidden").val(intent);
+    console.log(query);
 
 }

@@ -1,18 +1,1 @@
-{
-    "flight_booking": {
-        "indigo": [
-            {
-                "query": "from delhi to dubai",
-                "date": "2019-12-17"
-            },
-            {
-                "query": "from delhi to london",
-                "date": "2019-12-17"
-            },
-            {
-                "query": "from delhi to goa",
-                "date": "2019-12-17"
-            }
-        ]
-    }
-}
+{"flight_booking": {"indigo": [{"query": "from delhi to goa", "date": "2019-12-17"}], "airasia": []}}

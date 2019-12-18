@@ -10,5 +10,11 @@
 		"destination": "Delhi",
 		"time": "10am",
 		"charge": "7000"
+	},
+	"DELDUB-22321": {
+		"departure": "Delhi",
+		"destination": "Dubai",
+		"time": "5pm",
+		"charge": "60000"
 	}
 }

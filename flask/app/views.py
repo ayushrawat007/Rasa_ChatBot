@@ -209,6 +209,69 @@ def data_fill():
     with open('G:\\Users\\Ayush\\PycharmProjects\\Real_Project_ChatBot\\flask\\app\\data\\unanswered_queries.json') as json_file:
         uq = json.load(json_file)
 
+    if request.method == "POST":
+        details = request.form
+        print(details)
+        print(details["unansweredquery"])
+        print(details["answer"])
+
+        answer_list=details["answer"].split(",")
+        print(answer_list)
+        
+        nlp=spacy.load('en')
+        print(details["unansweredquery"])
+        doc=nlp(details["unansweredquery"].title())
+            
+        print("----------------before json load -----------------------")
+        if details["airline"]=='indigo':
+            with open('G:\\Users\\Ayush\\PycharmProjects\\Real_Project_ChatBot\\flask\\app\\data\\indigo.json') as json_file:
+                airline_data = json.load(json_file)
+        if details["airline"]=='airasia':
+            with open('G:\\Users\\Ayush\\PycharmProjects\\Real_Project_ChatBot\\flask\\app\\data\\airasia.json') as json_file:
+                airline_data = json.load(json_file)
+        count=0
+        print("----------------before entity extraction -----------------------")
+        gpe=[]
+        for ent in doc.ents:
+            if ent.label_=="GPE":
+                gpe.append(ent.text)
+                count+=1
+        print("----------------before json load -----------------------")
+        if count==2:
+            
+            departure=gpe[0]
+            destination=gpe[1]
+            print("---------entity  extracted----------")
+
+            airline_data[answer_list[0]]={
+                "departure": departure,
+                "destination": destination,
+                "time": answer_list[1],
+                "charge":answer_list[2] 
+            }
+            
+            print("----------------------------------------------------------------------------")
+            print(airline_data)
+            try:
+                for queries in uq[details["intent"]][details["airline"]]:
+                    if queries["query"]==details["unansweredquery"]:
+                        uq[details["intent"]][details["airline"]].remove(queries)
+            except KeyError:
+                print("----------------------Key Error Occured-----------------")
+                pass
+            print("----------------before json dump  -----------------------")
+            if details["airline"]=="indigo":
+                with open('G:\\Users\\Ayush\\PycharmProjects\\Real_Project_ChatBot\\flask\\app\\data\\indigo.json', 'w') as outfile:
+                    json.dump(airline_data, outfile)
+
+            if details["airline"]=="airasia":
+                with open('G:\\Users\\Ayush\\PycharmProjects\\Real_Project_ChatBot\\flask\\app\\data\\airasia.json', 'w') as outfile2:
+                    json.dump(airline_data, outfile2)
+            
+            with open('G:\\Users\\Ayush\\PycharmProjects\\Real_Project_ChatBot\\flask\\app\\data\\unanswered_queries.json', 'w') as outfile3:
+                    json.dump(uq, outfile3)
+
+
     return render_template('public/template/dashboard.html',uq=uq)
 
 
